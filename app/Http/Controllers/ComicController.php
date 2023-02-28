@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comic;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -11,7 +12,45 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+
+        $dc_comics = [
+            ['text' => 'Characters',        'url' => '#',        'current' => false,],
+            ['text' => 'Comics',        'url' => '#',        'current' => true,],
+            ['text' => 'Movies',        'url' => '#',        'current' => false,],
+            ['text' => 'TV',        'url' => '#',        'current' => false,],
+            ['text' => 'Games',        'url' => '#',        'current' => false,],
+            ['text' => 'Collectibles',        'url' => '#',        'current' => false,],
+            ['text' => 'Videos',        'url' => '#',        'current' => false,],
+            ['text' => 'Fans',        'url' => '#',        'current' => false,],
+            ['text' => 'News',        'url' => '#',        'current' => false,],
+            ['text' => 'Shop',        'url' => '#',        'current' => false,]
+        ];
+
+        $terms = [
+            'Terms of use',
+            'Privacy policy',
+            'Ad choices',
+            'Advertising',
+            'Jobs',
+            'Subs',
+            'Talent Workshop',
+            'Cpsc certificates',
+            'Ratings',
+            'Shop help',
+            'Contact us'
+        ];
+
+        $sites = [
+            'DC',
+            'MAD magazine',
+            'DC kids',
+            'DC universe',
+            'DC Power Visa'
+        ];
+
+        $cards = Comic::all();
+
+        return view('comics.index', compact('cards', 'dc_comics', 'terms', 'sites'));
     }
 
     /**
