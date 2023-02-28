@@ -24,6 +24,7 @@
                     <div class="comic-card">
                         <img src="{{ $card['thumb'] }}" :alt="card.series">
                         <h4>{{ $card['series'] }} </h4>
+                        
                     </div>
                 </div>
             @endforeach 

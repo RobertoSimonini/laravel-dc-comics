@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> {{ env('APP_NAME')}} </title>
 
-    @Vite('resources/js/app.js')
+    @vite('resources/js/app.js')
 
 </head>
 <body>
@@ -22,7 +22,9 @@
             @foreach ($cards as $card)
                 <div class="card">
                     <div class="comic-card">
-                        <img src="{{ $card['thumb'] }}" :alt="card.series">
+                        <a href="{{route('comics.show', $card->id)}}">
+                            <img src="{{ $card['thumb'] }}" :alt="card.series">
+                        </a>
                         <h4>{{ $card['series'] }} </h4>
                     </div>
                 </div>
