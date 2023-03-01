@@ -24,10 +24,10 @@
                     @if ($card->thumb)
                     <div class="col-2">
                         <div class="card">
-                            <img src="{{$card['thumb']}}" class="card-img-top img-fluid" alt="...">
+                            <img src="{{$card->thumb}}" class="card-img-top img-fluid" alt="...">
                             <div class="card-body">
                                     <a href="{{route('comics.show', $card->id)}}">
-                                        <h5 class="card-title text-white text-center">{{$card['title']}}</h5>
+                                        <h5 class="card-title text-white text-center">{{$card->title}}</h5>
                                     </a>
                                 </div>
                         </div>
