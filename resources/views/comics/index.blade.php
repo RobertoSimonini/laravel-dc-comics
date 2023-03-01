@@ -19,18 +19,26 @@
     <main>
         <div class="card-container">
             {{-- Qui ciclo in tutte le card  --}}
-            @foreach ($cards as $card)
-                <div class="card">
-                    <div class="comic-card">
-                        <a href="{{route('comics.show', $card->id)}}">
-                            <img src="{{ $card['thumb'] }}" :alt="card.series">
-                        </a>
-                        <h4>{{ $card['series'] }} </h4>
+            <div class="row g-3">
+                @foreach ($cards as $card)
+                    @if ($card->thumb)
+                    <div class="col-2">
+                        <div class="card">
+                            <img src="{{$card['thumb']}}" class="card-img-top img-fluid" alt="...">
+                            <div class="card-body">
+                                    <a href="{{route('comics.show', $card->id)}}">
+                                        <h5 class="card-title text-white text-center">{{$card['title']}}</h5>
+                                    </a>
+                                </div>
+                        </div>
                     </div>
-                </div>
-            @endforeach 
+                    @endif
+                @endforeach 
+            </div>
             
-            <button class="btn-blue">Load more</button>
+            <div class="d-flex justify-content-center py-5">
+                <button class="btn-blue">Load more</button>
+            </div>
         </div>
     </main>
 
