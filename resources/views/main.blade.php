@@ -19,17 +19,23 @@
     <main>
         <div class="card-container">
             {{-- Qui ciclo in tutte le card  --}}
-            @foreach ($cards as $card)
-                <div class="card">
-                    <div class="comic-card">
-                        <img src="{{ $card['thumb'] }}" :alt="card.series">
-                        <h4>{{ $card['series'] }} </h4>
-                        
-                    </div>
+
+            <div class="row g-3">
+                @foreach ($cards as $card)
+                <div class="col-2">
+                    <div class="card">
+                        <img src="{{$card['thumb']}}" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-white text-center">{{$card['title']}}</h5>
+                        </div>
+                      </div>
                 </div>
-            @endforeach 
+                @endforeach 
+            </div>
             
-            <button class="btn-blue">Load more</button>
+            <div class="d-flex justify-content-center py-5">
+                <button class="btn-blue">Load more</button>
+            </div>
         </div>
     </main>
 
