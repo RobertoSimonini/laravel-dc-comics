@@ -59,4 +59,6 @@ Route::get('/', function () {
 
 Route::resource('comics', ComicController::class);
 
+Route::get('/comics/create', [ComicController::class, 'create'])->name('comics.create');
+
 Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');

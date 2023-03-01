@@ -37,7 +37,8 @@
             </div>
             
             <div class="d-flex justify-content-center py-5">
-                <button class="btn-blue">Load more</button>
+                <a class="btn-primary btn">Load more</a>
+                <a class="btn-success btn ms-3" href="{{route('comics.create')}}">Create a new comic</a>
             </div>
         </div>
     </main>
