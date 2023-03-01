@@ -19,7 +19,7 @@
     <main>
         <div class="card-container py-5">
             {{-- Qui ciclo in tutte le card  --}}
-            <div class="row g-3 pt-4">
+            <div class="row g-3 py-5">
                 @foreach ($cards as $card)
                     @if ($card->thumb)
                     <div class="col-2">
