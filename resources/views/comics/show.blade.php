@@ -22,7 +22,7 @@
                     {{$comic->title}}
                 </h1>
 
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary bg-success rounded my-5 mx-auto">
                     <div class="container">
                     <a class="navbar-brand" href="#">Us price: {{$comic->price}}</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,24 +49,28 @@
                         Artists:
                     </h3>
     
-                    <p class="text-primary">
+                    <p class="text-primary text-center">
                         {{$comic->artists}}
                     </p>
                 </div>
-                
+
                 <div class="writers w-50 mx-auto">
                     <h3 class="text-center py-3">
                         Writers:
                     </h3>
     
-                    <p class="text-primary">
+                    <p class="text-primary text-center">
                         {{$comic->writers}}
                     </p>
                 </div>
-                
-                
+        </div>
+
+        <div class="home d-flex justify-content-center">
+            <a class="btn btn-secondary w-25 mx-auto" href="{{route('main')}}">Home</a>
         </div>
     </section>
+
+    @include('includes.footer')
 
 </body>
 </html>

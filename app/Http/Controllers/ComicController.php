@@ -74,9 +74,45 @@ class ComicController extends Controller
      */
     public function show(string $id)
     {
+
+        $dc_comics = [
+            ['text' => 'Characters',        'url' => '#',        'current' => false,],
+            ['text' => 'Comics',        'url' => '#',        'current' => true,],
+            ['text' => 'Movies',        'url' => '#',        'current' => false,],
+            ['text' => 'TV',        'url' => '#',        'current' => false,],
+            ['text' => 'Games',        'url' => '#',        'current' => false,],
+            ['text' => 'Collectibles',        'url' => '#',        'current' => false,],
+            ['text' => 'Videos',        'url' => '#',        'current' => false,],
+            ['text' => 'Fans',        'url' => '#',        'current' => false,],
+            ['text' => 'News',        'url' => '#',        'current' => false,],
+            ['text' => 'Shop',        'url' => '#',        'current' => false,]
+        ];
+
+        $terms = [
+            'Terms of use',
+            'Privacy policy',
+            'Ad choices',
+            'Advertising',
+            'Jobs',
+            'Subs',
+            'Talent Workshop',
+            'Cpsc certificates',
+            'Ratings',
+            'Shop help',
+            'Contact us'
+        ];
+
+        $sites = [
+            'DC',
+            'MAD magazine',
+            'DC kids',
+            'DC universe',
+            'DC Power Visa'
+        ];
+
         $comic = Comic::findOrFail($id);
 
-        return view('comics.show', compact('comic'));
+        return view('comics.show', compact('comic', 'dc_comics', 'terms', 'sites'));
     }
 
     /**
