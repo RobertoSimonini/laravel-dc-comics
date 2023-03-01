@@ -14,50 +14,52 @@
         Add a Comic
     </h1>
     <div class="container p-5">
-        <form class="w-100 row text-center">
+        <form method="POST" action="{{route('comics.store')}}" class="w-100 row text-center">
+            @csrf
+
             <div class="mb-4 col-12">
               <label for="title" class="form-label">Title</label>
-              <input type="text" class="form-control text-center" id="title" placeholder="Add a title">
+              <input type="text" class="form-control text-center" id="title" placeholder="Add a title" name="title">
             </div>
 
             <div class="mb-3 col-12">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" rows="3" placeholder="Description"></textarea>
+                <textarea class="form-control" id="description" rows="3" placeholder="Description" name="description"></textarea>
             </div>
 
             <div class="mb-3 col-6">
                 <label for="thumb" class="form-label">Thumb</label>
-                <input type="text" class="form-control text-center" id="thumb" placeholder="Add thumbnail's url image">
+                <input type="url" class="form-control text-center" id="thumb" placeholder="Add thumbnail's url image" name="thumb">
             </div>
 
             <div class="mb-3 col-6">
                 <label for="price" class="form-label">Price</label>
-                <input type="number" min="0" class="form-control text-center" id="price" placeholder="Comic's price">
+                <input type="text" min="0" class="form-control text-center" id="price" placeholder="Comic's price" name="price">
             </div>
 
             <div class="mb-3 col-4">
                 <label for="series" class="form-label">Series</label>
-                <input type="text" class="form-control text-center" id="series" placeholder="Comic's Series">
+                <input type="text" class="form-control text-center" id="series" placeholder="Comic's Series" name="series">
             </div>
 
             <div class="mb-3 col-4">
-                <label for="sales_date" class="form-label">Sales Date</label>
-                <input type="text" class="form-control text-center" id="sales_date" placeholder="Sales Date">
+                <label for="sale_date" class="form-label">Sale Date</label>
+                <input type="text" class="form-control text-center" id="sale_date" placeholder="Sale Date" name="sale_date">
             </div>
 
             <div class="mb-3 col-4">
                 <label for="type" class="form-label">Type</label>
-                <input type="text" class="form-control text-center" id="type" placeholder="Comic's Type">
+                <input type="text" class="form-control text-center" id="type" placeholder="Comic's Type" name="type">
             </div>
 
             <div class="mb-3 col-6">
                 <label for="artists" class="form-label">Artists</label>
-                <textarea class="form-control text-center" id="artists" rows="3" placeholder="Artists"></textarea>
+                <textarea class="form-control text-center" id="artists" rows="3" placeholder="Artists" name="artists"></textarea>
             </div>
 
             <div class="mb-3 col-6">
                 <label for="writers" class="form-label">Writers</label>
-                <textarea class="form-control text-center" id="writers" rows="3" placeholder="Writers"></textarea>
+                <textarea class="form-control text-center" id="writers" rows="3" placeholder="Writers" name="writers"></textarea>
             </div>
 
 
@@ -65,7 +67,7 @@
             </div>
 
             <div class="col-12 d-flex justify-content-between">
-                <button type="submit" class="btn btn-primary col-3">Submit</button>
+                <button type="submit" class="btn btn-primary col-3">Salva</button>
                 <a type="submit" class="btn btn-secondary col-3" href="{{route('comics.index')}}"> Go back </a>
             </div>
 
