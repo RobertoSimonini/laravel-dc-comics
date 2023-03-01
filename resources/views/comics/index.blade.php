@@ -17,9 +17,9 @@
 
     {{-- Qui metto il main con tutti i fumetti  --}}
     <main>
-        <div class="card-container">
+        <div class="card-container py-5">
             {{-- Qui ciclo in tutte le card  --}}
-            <div class="row g-3">
+            <div class="row g-3 pt-4">
                 @foreach ($cards as $card)
                     @if ($card->thumb)
                     <div class="col-2">
@@ -36,7 +36,7 @@
                 @endforeach 
             </div>
             
-            <div class="d-flex justify-content-center py-5">
+            <div class="d-flex justify-content-center">
                 <a class="btn-primary btn">Load more</a>
                 <a class="btn-success btn ms-3" href="{{route('comics.create')}}">Create a new comic</a>
             </div>
