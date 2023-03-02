@@ -71,6 +71,11 @@
         </div>
 
         <div class="buttons d-flex justify-content-center">
+            <form action="{{route('comics.destroy', $comic->id)}}" class="mx-3" method="POST">
+                @method('DELETE')
+                @csrf
+                <button class="btn btn-danger">Remove Comic</button>
+            </form>
                 <a class="btn btn-secondary" href="{{route('main')}}">Home</a>
                 <a class="btn-warning btn ms-3" href="{{route('comics.edit', $comic->id)}}">Edit the comic</a>
         </div>
