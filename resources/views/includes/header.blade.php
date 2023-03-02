@@ -15,7 +15,9 @@
     <div class="header-bottom">
         {{-- logo DC  --}}
         <figure>
-            <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="">
+            <a href="{{route('main')}}">
+                <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="">
+            </a>
         </figure>
 
         {{-- Qui metto la navbar con i relativi link  --}}
