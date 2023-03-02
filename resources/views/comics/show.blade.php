@@ -12,11 +12,16 @@
     @include('includes.header')
 
     @include('includes.jumbotron')
+    
+    <div class="blue-row">
 
+        <img src="{{$comic->thumb}}" class="img-fluid" alt="" id="details_logo">
+    </div>
     <section id="details" class="bg-white p-5">
 
-        
+
         <div class="container d-flex flex-column justify-content-center">
+
 
                 <h1 class="text-primary text-center">
                     {{$comic->title}}
@@ -65,8 +70,9 @@
                 </div>
         </div>
 
-        <div class="home d-flex justify-content-center">
-            <a class="btn btn-secondary w-25 mx-auto" href="{{route('main')}}">Home</a>
+        <div class="buttons d-flex justify-content-center">
+                <a class="btn btn-secondary" href="{{route('main')}}">Home</a>
+                <a class="btn-warning btn ms-3" href="{{route('comics.edit', $comic->id)}}">Edit the comic</a>
         </div>
     </section>
 

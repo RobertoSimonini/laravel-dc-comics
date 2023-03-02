@@ -17,3 +17,14 @@ body { font-family: "Open Sans Condensed", sans-serif;
   a {
     text-decoration: none;
   }
+
+  .blue-row {
+    height: 100px;
+    background-color: dodgerblue;
+  }
+
+  #details_logo {
+    height: 400px;
+    width: 200px;
+    transform: translate(560px, -335px);
+  }
